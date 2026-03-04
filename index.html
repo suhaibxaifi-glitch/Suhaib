@@ -1,37 +1,62 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Suhaib Website</title>
+  <title>Suhaib Animated Website</title>
   <style>
     body {
-      background-color: black;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(45deg, #000000, #1a1a1a);
       color: white;
       text-align: center;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
     }
+
     h1 {
-      color: cyan;
-      margin-top: 100px;
+      margin-top: 150px;
+      font-size: 40px;
+      animation: glow 2s infinite alternate;
     }
+
     p {
       font-size: 20px;
-      color: lightgray;
+      animation: fadeIn 3s ease-in-out;
     }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px cyan; }
+      to { text-shadow: 0 0 30px blue; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     button {
-      padding: 10px 20px;
+      margin-top: 20px;
+      padding: 12px 25px;
       font-size: 18px;
-      background-color: cyan;
+      background: cyan;
       border: none;
-      border-radius: 5px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: blue;
+      color: white;
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to Suhaib's Website 🚀</h1>
-  <p>I am learning English and coding.</p>
-  <button onclick="alert('Thank you for visiting!')">
+  <h1>🚀 Welcome to Suhaib's World</h1>
+  <p>I am learning English and becoming a Web Developer.</p>
+  <button onclick="alert('Keep Learning Suhaib 🔥')">
     Click Me
   </button>
 
