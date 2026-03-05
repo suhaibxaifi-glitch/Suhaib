@@ -1,112 +1,138 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suhaib Trophy House</title>
-  <style>
-    /* Background Animation Setup */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      /* Animated Gradient */
-      background: linear-gradient(-45deg, #f4f4f4, #e8e8e8, #ffffff, #dcdcdc);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      text-align: center;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhaib Trophy Manufacturing</title>
+    <style>
+        /* --- Aapka Existing aur Base Style --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
 
-    /* Animation Keyframes */
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Menu placement ke liye */
+        }
 
-    header {
-      background: rgba(17, 17, 17, 0.9); /* Thoda transparent black */
-      color: white;
-      padding: 30px 20px;
-      backdrop-filter: blur(5px); /* Modern blur effect */
-    }
+        header h1 { margin: 0; font-size: 24px; }
+        header p { margin: 5px 0 0; font-size: 14px; }
 
-    h1 { margin: 0; font-size: 28px; }
+        .section { padding: 40px 20px; text-align: center; }
+        
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-    .section { padding: 40px 15px; }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 280px;
+            padding: 15px;
+            transition: 0.3s;
+        }
 
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; border-radius: 8px; }
 
-    .card {
-      background: white;
-      padding: 15px;
-      width: 280px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+        .btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
 
-    /* Card Hover Animation */
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+        .contact { background: #eee; padding: 40px 20px; text-align: center; }
 
-    .card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+        /* --- 3-Dot Menu Ka Naya CSS --- */
+        .menu-container {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            z-index: 1000;
+        }
 
-    .about {
-      background: rgba(255, 255, 255, 0.8);
-      margin: 20px auto;
-      max-width: 800px;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+        .three-dots {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 10px;
+        }
 
-    .contact {
-      background: #222;
-      color: white;
-      padding: 40px 20px;
-      margin-top: 30px;
-    }
+        .three-dots span {
+            width: 5px;
+            height: 5px;
+            background-color: white; /* Header ke hisab se white dots */
+            border-radius: 50%;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #FFD700;
-      color: #000;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-      margin-top: 20px;
-      font-size: 18px;
-      transition: transform 0.2s;
-    }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background-color: white;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: left;
+        }
 
-    .btn:hover { transform: scale(1.1); }
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
 
-    p { line-height: 1.6; }
-  </style>
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover { background-color: #f1f1f1; color: #2c3e50; }
+
+        .show { display: block !important; }
+
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>🏭 Suhaib Trophy Manufacturing</h1>
-  <p>Wholesale Trophy Manufacturer – All India Supply</p>
+    <div class="menu-container">
+        <div class="three-dots" id="dotBtn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#products">Order</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <h1>🏭 Suhaib Trophy Manufacturing</h1>
+    <p>Wholesale Trophy Manufacturer – All India Supply</p>
 </header>
 
-<div class="section">
-  <h2>Our Products</h2>
+<div class="section" id="home">
+  <h2 id="products">Our Products</h2>
   <div class="products">
     <div class="card">
       <img src="mypic1.jpg" alt="Sports Trophy">
@@ -136,7 +162,7 @@
   </p>
 </div>
 
-<div class="contact">
+<div class="contact" id="contact">
   <h2>Contact Us</h2>
   <p>📧 Email: suhail9pm@gmail.com</p>
   <p>📍 Location: Meerut, Uttar Pradesh, India</p>
@@ -144,6 +170,26 @@
     Order on WhatsApp
   </a>
 </div>
+
+<script>
+    // Menu toggle function
+    function toggleMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Bahar click karne par menu band karne ke liye
+    window.onclick = function(event) {
+        if (!event.target.closest('#dotBtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
