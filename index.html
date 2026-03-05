@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suhaib Trophy House</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f4f4f4;
       text-align: center;
+      color: #333;
     }
     header {
       background: #111;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
     }
     h1 {
       margin: 0;
+      font-size: 28px;
     }
     .section {
-      padding: 40px 20px;
+      padding: 40px 15px;
     }
     .products {
       display: flex;
@@ -28,70 +32,100 @@
     }
     .card {
       background: white;
-      padding: 20px;
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 15px;
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     .card img {
       width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .about {
+      background: #fff;
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 25px;
       border-radius: 10px;
     }
     .contact {
       background: #222;
       color: white;
-      padding: 30px;
+      padding: 40px 20px;
+      margin-top: 30px;
     }
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      background: gold;
-      color: black;
+      padding: 15px 30px;
+      background: #FFD700;
+      color: #000;
       text-decoration: none;
-      border-radius: 5px;
-      margin-top: 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
     }
+    p { line-height: 1.6; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>🏭 Suhaib Trophy Manufacturing</h1>
-<p>Wholesale Trophy Manufacturer – All India Supply</p>
+  <p>Wholesale Trophy Manufacturer – All India Supply</p>
 </header>
 
 <div class="section">
   <h2>Our Products</h2>
   <div class="products">
+    
     <div class="card">
-      <img src="https://via.placeholder.com/250" alt="Trophy">
-      <h3>Sports Trophy</h3>
-      <p>Perfect for Cricket & Football Matches</p>
+      <img src="mypic1.jpg" alt="Sports Trophy">
+      <h3>Premium Sports Trophy</h3>
+      <p>Cricket, Football aur sabhi sports ke liye behtareen design.</p>
     </div>
+
     <div class="card">
-      <img src="https://via.placeholder.com/250" alt="Trophy">
-      <h3>School Award</h3>
-      <p>Best for Annual Functions</p>
+      <img src="mypic2.jpg" alt="School Award">
+      <h3>School & College Awards</h3>
+      <p>Annual functions aur academic excellence ke liye top quality.</p>
     </div>
+
+    <div class="card">
+      <img src="mypic3.jpg" alt="Custom Medal">
+      <h3>Custom Medals & Gifts</h3>
+      <p>Sahi price mein premium finishing aur custom printing.</p>
+    </div>
+
   </div>
 </div>
 
-<div class="section">
+<div class="section about">
   <h2>About Us</h2>
   <p>
-We are a trophy manufacturing unit based in Meerut.
-We supply high-quality custom trophies, medals and awards
-across India with fast delivery.
-</p>
+    Hum Meerut based <strong>Trophy Manufacturing Unit</strong> hain. 
+    Hum poore India mein high-quality custom trophies, medals aur awards wholesale rate par supply karte hain. 
+    Fast delivery aur customer satisfaction hamari priority hai.
+  </p>
 </div>
+
 <div class="contact">
   <h2>Contact Us</h2>
   <p>📦 Bulk Orders Available</p>
-<p>🚚 All India Shipping</p>
-<p>🎨 Custom Name Printing Available</p>
-  <p>📞 email: suhail9pm@gmail.com</p>
-  <p>📍 Location: Meerut, India</p>
-  <a class="btn" href="https://wa.me/9084497591">Order on WhatsApp</a>
+  <p>🚚 All India Shipping</p>
+  <p>🎨 Custom Name Printing Available</p>
+  <p>📧 Email: suhail9pm@gmail.com</p>
+  <p>📍 Location: Meerut, Uttar Pradesh, India</p>
+  
+  <a class="btn" href="https://wa.me/9084497591?text=Hi, mujhe trophies ke baare mein jaankari chahiye">
+    Order on WhatsApp
+  </a>
 </div>
 
 </body>
