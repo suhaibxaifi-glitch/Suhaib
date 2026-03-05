@@ -1,474 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhaib Trophies | Premium Trophy Manufacturer</title>
+    <meta name="description" content="Suhaib Trophies is a Moradabad based trophy manufacturer supplying sports trophies, medals and awards across India.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* --- HEADER --- */
+        header {
+            background: rgba(0,0,0,0.9);
+            border-bottom: 2px solid #d4af37;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { margin: 0; color: #d4af37; letter-spacing: 2px; }
+        header p { color: #aaa; font-size: 13px; }
 
-<title>Suhaib Trophies | Trophy Manufacturer in Moradabad</title>
+        /* --- MENU --- */
+        .menu-container { position: absolute; left: 15px; top: 22px; }
+        .three-dots { cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+        .three-dots span { width: 5px; height: 5px; background: #d4af37; border-radius: 50%; }
+        .dropdown {
+            display: none; position: absolute; top: 40px; background: #111;
+            border: 1px solid #d4af37; border-radius: 8px; width: 150px;
+        }
+        .dropdown a { display: block; padding: 12px 20px; text-decoration: none; color: #d4af37; border-bottom: 1px solid #333; }
+        .dropdown a:hover { background: #d4af37; color: black; }
+        .show { display: block; }
 
-<meta name="description" content="Suhaib Trophies is a Moradabad based trophy manufacturer supplying sports trophies, medals and awards across India.">
+        /* --- PREMIUM ENTRANCE (GIF STYLE) --- */
+        .entrance-container {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, #001d3d 0%, #000 70%);
+            overflow: hidden;
+        }
+        /* Background Waves Effect */
+        .entrance-container::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
+            animation: rotateBg 20s linear infinite;
+        }
+        @keyframes rotateBg { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        .hero-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 2s forwards 0.5s;
+        }
 
-<style>
+        .cube-wrapper { perspective: 1000px; z-index: 2; }
+        .cube {
+            width: 280px;
+            height: 70px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: cubeRotate 10s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            border: 1.5px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-transform: uppercase;
+            backface-visibility: hidden;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        .front  { transform: rotateX(0deg) translateZ(35px); }
+        .bottom { transform: rotateX(-90deg) translateZ(35px); }
+        .back   { transform: rotateX(-180deg) translateZ(35px); }
+        .top    { transform: rotateX(90deg) translateZ(35px); }
 
-html{
-scroll-behavior:smooth;
-}
+        @keyframes cubeRotate {
+            0%, 15%  { transform: rotateX(0deg); }
+            20%, 35% { transform: rotateX(90deg); }
+            40%, 55% { transform: rotateX(180deg); }
+            60%, 75% { transform: rotateX(270deg); }
+            80%, 100% { transform: rotateX(360deg); }
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
 
-body{
-font-family:'Poppins',sans-serif;
-margin:0;
-background:#050505;
-color:white;
-}
+        /* --- SLIDER --- */
+        .slider { width: 100%; height: 400px; overflow: hidden; border-top: 2px solid #d4af37; }
+        .slides { display: flex; width: 300%; animation: slide 12s infinite; }
+        .slides img { width: 100%; height: 400px; object-fit: cover; }
+        @keyframes slide {
+            0%, 30% { margin-left: 0; }
+            33%, 63% { margin-left: -100%; }
+            66%, 96% { margin-left: -200%; }
+            100% { margin-left: 0; }
+        }
 
-/* HEADER */
+        /* --- SECTIONS --- */
+        .section { padding: 80px 20px; text-align: center; max-width: 1100px; margin: auto; }
+        h2 { color: #d4af37; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; }
+        
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-header{
-background:black;
-border-bottom:2px solid #d4af37;
-padding:20px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:1000;
-}
+        /* --- PRODUCTS GRID --- */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #111; border: 1px solid #222; border-radius: 15px; padding: 25px; transition: .4s; }
+        .card:hover { transform: translateY(-10px); border-color: #d4af37; box-shadow: 0 10px 20px rgba(212,175,55,0.1); }
+        .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+        .card h3 { color: #d4af37; }
 
-header h1{
-margin:0;
-color:#d4af37;
-letter-spacing:2px;
-}
+        /* --- GALLERY --- */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .gallery img:hover { filter: brightness(1.2); }
 
-header p{
-color:#aaa;
-font-size:13px;
-}
+        /* --- LIGHTBOX --- */
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; z-index: 2000; }
+        .lightbox img { max-width: 90%; max-height: 80%; border: 2px solid #d4af37; }
 
-/* MENU */
+        /* --- FORM --- */
+        form { max-width: 500px; margin: auto; background: #111; padding: 30px; border-radius: 15px; border: 1px solid #333; }
+        form input, form select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #444; background: #222; color: white; box-sizing: border-box; }
+        .btn { background: linear-gradient(45deg, #d4af37, #f9e076); padding: 15px 40px; border-radius: 40px; text-decoration: none; color: black; font-weight: bold; border: none; cursor: pointer; width: 100%; font-size: 1rem; }
 
-.menu-container{
-position:absolute;
-left:15px;
-top:22px;
-}
-
-.three-dots{
-cursor:pointer;
-display:flex;
-flex-direction:column;
-gap:4px;
-}
-
-.three-dots span{
-width:5px;
-height:5px;
-background:#d4af37;
-border-radius:50%;
-}
-
-.dropdown{
-display:none;
-position:absolute;
-top:40px;
-background:#111;
-border:1px solid #d4af37;
-border-radius:8px;
-}
-
-.dropdown a{
-display:block;
-padding:12px 20px;
-text-decoration:none;
-color:#d4af37;
-border-bottom:1px solid #333;
-}
-
-.dropdown a:hover{
-background:#d4af37;
-color:black;
-}
-
-.show{
-display:block;
-}
-
-/* SLIDER */
-
-.slider{
-width:100%;
-height:350px;
-overflow:hidden;
-}
-
-.slides{
-display:flex;
-width:300%;
-animation:slide 9s infinite;
-}
-
-.slides img{
-width:100%;
-object-fit:cover;
-}
-
-@keyframes slide{
-
-0%{margin-left:0;}
-33%{margin-left:0;}
-
-38%{margin-left:-100%;}
-66%{margin-left:-100%;}
-
-71%{margin-left:-200%;}
-100%{margin-left:-200%;}
-
-}
-
-/* SECTION */
-
-.section{
-padding:60px 20px;
-text-align:center;
-max-width:1100px;
-margin:auto;
-}
-
-h2{
-color:#d4af37;
-margin-bottom:40px;
-}
-
-/* PRODUCTS */
-
-.products-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:#111;
-border:1px solid #222;
-border-radius:15px;
-padding:20px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#d4af37;
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-.card h3{
-color:#d4af37;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-cursor:pointer;
-border:1px solid #222;
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-align-items:center;
-justify-content:center;
-z-index:2000;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
-
-/* ABOUT */
-
-.about-box{
-background:#111;
-border:1px solid #d4af37;
-padding:30px;
-border-radius:15px;
-}
-
-/* CONTACT */
-
-.contact{
-background:black;
-border-top:1px solid #d4af37;
-}
-
-.btn{
-background:linear-gradient(45deg,#d4af37,#f9e076);
-padding:15px 40px;
-border-radius:40px;
-text-decoration:none;
-color:black;
-font-weight:bold;
-border:none;
-cursor:pointer;
-}
-
-/* FORM */
-
-form input,form select{
-width:100%;
-padding:10px;
-margin:8px 0;
-border-radius:6px;
-border:none;
-}
-
-/* MAP */
-
-.map{
-margin-top:40px;
-border-radius:10px;
-overflow:hidden;
-}
-
-/* FLOAT WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px 20px;
-color:white;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-color:#aaa;
-font-size:13px;
-}
-
-</style>
-
+        /* --- WHATSAPP & FOOTER --- */
+        .whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25D366; padding: 15px 20px; color: white; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; }
+        footer { text-align: center; padding: 40px; color: #666; font-size: 13px; border-top: 1px solid #222; }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<div class="menu-container">
-
-<div class="three-dots" onclick="menu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-
-<div class="dropdown" id="menu">
-<a href="#">Home</a>
-<a href="#products">Products</a>
-<a href="#gallery">Gallery</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-<h1>Suhaib Trophies</h1>
-<p>Wholesale Trophy Manufacturer – Moradabad</p>
-
+    <div class="menu-container">
+        <div class="three-dots" onclick="menu()">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="dropdown" id="menu">
+            <a href="#" onclick="menu()">Home</a>
+            <a href="#products" onclick="menu()">Products</a>
+            <a href="#gallery" onclick="menu()">Gallery</a>
+            <a href="#about" onclick="menu()">About</a>
+            <a href="#contact" onclick="menu()">Contact</a>
+        </div>
+    </div>
+    <h1>Suhaib Trophies</h1>
+    <p>Wholesale Trophy Manufacturer – Moradabad</p>
 </header>
 
-<!-- SLIDER -->
+<div class="entrance-container">
+    <div class="hero-text">Crafting Your</div>
+    <div class="cube-wrapper">
+        <div class="cube">
+            <div class="face front">TROPHY</div>
+            <div class="face bottom">LEGACY</div>
+            <div class="face back">SUCCESS</div>
+            <div class="face top">VICTORY</div>
+        </div>
+    </div>
+</div>
 
 <div class="slider">
-<div class="slides">
-<img src="mypic1.jpg">
-<img src="mypic2.jpg">
-<img src="mypic3.jpg">
-</div>
-</div>
-
-<!-- PRODUCTS -->
-
-<div class="section" id="products">
-
-<h2>Our Products</h2>
-
-<div class="products-grid">
-
-<div class="card">
-<img src="mypic1.jpg">
-<h3>Sports Trophy</h3>
-<p>Perfect for cricket and football tournaments.</p>
+    <div class="slides">
+        <img src="mypic1.jpg" alt="Trophy 1">
+        <img src="mypic2.jpg" alt="Trophy 2">
+        <img src="mypic3.jpg" alt="Trophy 3">
+    </div>
 </div>
 
-<div class="card">
-<img src="mypic2.jpg">
-<h3>School Awards</h3>
-<p>Best trophies for annual functions.</p>
+<div class="section reveal" id="products">
+    <h2>Our Products</h2>
+    <div class="products-grid">
+        <div class="card">
+            <img src="mypic1.jpg">
+            <h3>Sports Trophy</h3>
+            <p>Perfect for cricket and football tournaments.</p>
+        </div>
+        <div class="card">
+            <img src="mypic2.jpg">
+            <h3>School Awards</h3>
+            <p>Best trophies for annual functions.</p>
+        </div>
+        <div class="card">
+            <img src="mypic3.jpg">
+            <h3>Custom Medals</h3>
+            <p>Premium medals with custom printing.</p>
+        </div>
+    </div>
 </div>
 
-<div class="card">
-<img src="mypic3.jpg">
-<h3>Custom Medals</h3>
-<p>Premium medals with custom printing.</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- GALLERY -->
-
-<div class="section" id="gallery">
-
-<h2>Trophy Gallery</h2>
-
-<div class="gallery">
-
-<img src="mypic1.jpg" onclick="openImg(this)">
-<img src="mypic2.jpg" onclick="openImg(this)">
-<img src="mypic3.jpg" onclick="openImg(this)">
-<img src="mypic1.jpg" onclick="openImg(this)">
-<img src="mypic2.jpg" onclick="openImg(this)">
-<img src="mypic3.jpg" onclick="openImg(this)">
-
-</div>
-
+<div class="section reveal" id="gallery">
+    <h2>Trophy Gallery</h2>
+    <div class="gallery">
+        <img src="mypic1.jpg" onclick="openImg(this)">
+        <img src="mypic2.jpg" onclick="openImg(this)">
+        <img src="mypic3.jpg" onclick="openImg(this)">
+        <img src="mypic1.jpg" onclick="openImg(this)">
+        <img src="mypic2.jpg" onclick="openImg(this)">
+        <img src="mypic3.jpg" onclick="openImg(this)">
+    </div>
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeImg()">
-<img id="lightbox-img">
+    <img id="lightbox-img">
 </div>
 
-<!-- ABOUT -->
-
-<div class="section" id="about">
-
-<h2>About Us</h2>
-
-<div class="about-box">
-
-<p>
-We are a Moradabad based trophy manufacturing unit supplying high quality custom trophies and awards across India at wholesale prices.
-</p>
-
+<div class="section reveal" id="about">
+    <h2>About Us</h2>
+    <div style="background:#111; padding:30px; border-radius:15px; border:1px solid #d4af37;">
+        <p>We are a Moradabad based trophy manufacturing unit supplying high quality custom trophies and awards across India at wholesale prices.</p>
+    </div>
 </div>
 
+<div class="section reveal" id="contact">
+    <h2>Order via WhatsApp</h2>
+    <form onsubmit="sendOrder();return false;">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="city" placeholder="City" required>
+        <select id="product">
+            <option>Sports Trophy</option>
+            <option>School Award</option>
+            <option>Custom Medal</option>
+        </select>
+        <input type="number" id="qty" placeholder="Quantity" required>
+        <button class="btn">Send WhatsApp Order</button>
+    </form>
 </div>
 
-<!-- CONTACT -->
-
-<div class="section contact" id="contact">
-
-<h2>Order Now</h2>
-
-<form onsubmit="sendOrder();return false;">
-
-<input type="text" id="name" placeholder="Your Name" required>
-
-<input type="tel" id="phone" placeholder="Phone Number" required>
-
-<input type="text" id="city" placeholder="City" required>
-
-<select id="product">
-<option>Sports Trophy</option>
-<option>School Award</option>
-<option>Custom Medal</option>
-</select>
-
-<input type="number" id="qty" placeholder="Quantity" required>
-
-<br><br>
-
-<button class="btn">Send Order</button>
-
-</form>
-
-<div class="map">
-
-<iframe 
-src="https://maps.google.com/maps?q=moradabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300">
-</iframe>
-
-</div>
-
-</div>
-
-<a class="whatsapp" href="https://wa.me/9084497591">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/9084497591">WhatsApp Chat</a>
 
 <footer>
-
-© 2026 Suhaib Trophy Manufacturing
-
+    © 2026 Suhaib Trophy Manufacturing | Moradabad, India
 </footer>
 
 <script>
+    // Menu Toggle
+    function menu(){
+        document.getElementById("menu").classList.toggle("show");
+    }
 
-function menu(){
-document.getElementById("menu").classList.toggle("show");
-}
+    // Lightbox
+    function openImg(img){
+        document.getElementById("lightbox").style.display="flex";
+        document.getElementById("lightbox-img").src=img.src;
+    }
+    function closeImg(){
+        document.getElementById("lightbox").style.display="none";
+    }
 
-function openImg(img){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=img.src;
-}
+    // WhatsApp Order
+    function sendOrder(){
+        var name=document.getElementById("name").value;
+        var phone=document.getElementById("phone").value;
+        var city=document.getElementById("city").value;
+        var product=document.getElementById("product").value;
+        var qty=document.getElementById("qty").value;
 
-function closeImg(){
-document.getElementById("lightbox").style.display="none";
-}
+        var msg="🏆 *New Trophy Order* 🏆%0A%0A"+
+                "*Name:* "+name+"%0A"+
+                "*Phone:* "+phone+"%0A"+
+                "*City:* "+city+"%0A"+
+                "*Product:* "+product+"%0A"+
+                "*Quantity:* "+qty;
 
-function sendOrder(){
+        window.location.href = "https://wa.me/9084497591?text="+msg;
+    }
 
-var name=document.getElementById("name").value;
-var phone=document.getElementById("phone").value;
-var city=document.getElementById("city").value;
-var product=document.getElementById("product").value;
-var qty=document.getElementById("qty").value;
+    // Scroll Reveal Animation
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
 
-var msg="New Trophy Order%0A%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"City: "+city+"%0A"+
-"Product: "+product+"%0A"+
-"Quantity: "+qty;
-
-window.open("https://wa.me/9084497591?text="+msg);
-
-}
-
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var revealTop = reveals[i].getBoundingClientRect().top;
+            var revealPoint = 100;
+            if (revealTop < windowHeight - revealPoint) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
 </script>
 
 </body>
