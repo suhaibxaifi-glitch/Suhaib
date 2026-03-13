@@ -1,122 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suhaib Trophies</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Suhaib Trophies | Trophy Manufacturer in Moradabad</title>
+
+<meta name="description" content="Suhaib Trophies is a Moradabad based trophy manufacturer supplying sports trophies, medals and awards across India.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#f5f5f5;
+html{
+scroll-behavior:smooth;
 }
+
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+background:#050505;
+color:white;
+}
+
+/* HEADER */
 
 header{
-background:#000;
-color:white;
+background:black;
+border-bottom:2px solid #d4af37;
+padding:20px;
 text-align:center;
-padding:20px;
-font-size:26px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.container{
-max-width:1000px;
+header h1{
+margin:0;
+color:#d4af37;
+letter-spacing:2px;
+}
+
+header p{
+color:#aaa;
+font-size:13px;
+}
+
+/* MENU */
+
+.menu-container{
+position:absolute;
+left:15px;
+top:22px;
+}
+
+.three-dots{
+cursor:pointer;
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.three-dots span{
+width:5px;
+height:5px;
+background:#d4af37;
+border-radius:50%;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:40px;
+background:#111;
+border:1px solid #d4af37;
+border-radius:8px;
+}
+
+.dropdown a{
+display:block;
+padding:12px 20px;
+text-decoration:none;
+color:#d4af37;
+border-bottom:1px solid #333;
+}
+
+.dropdown a:hover{
+background:#d4af37;
+color:black;
+}
+
+.show{
+display:block;
+}
+
+/* SLIDER */
+
+.slider{
+width:100%;
+height:350px;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+width:300%;
+animation:slide 9s infinite;
+}
+
+.slides img{
+width:100%;
+object-fit:cover;
+}
+
+@keyframes slide{
+
+0%{margin-left:0;}
+33%{margin-left:0;}
+
+38%{margin-left:-100%;}
+66%{margin-left:-100%;}
+
+71%{margin-left:-200%;}
+100%{margin-left:-200%;}
+
+}
+
+/* SECTION */
+
+.section{
+padding:60px 20px;
+text-align:center;
+max-width:1100px;
 margin:auto;
-padding:20px;
 }
 
-.product{
-background:white;
-border-radius:12px;
-padding:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+h2{
+color:#d4af37;
+margin-bottom:40px;
 }
 
-.product img{
+/* PRODUCTS */
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:15px;
+padding:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+}
+
+.card img{
 width:100%;
 border-radius:10px;
 }
 
-.title{
-font-size:28px;
-font-weight:600;
-margin-top:15px;
+.card h3{
+color:#d4af37;
 }
 
-.price{
-color:#1a8f2f;
-font-size:26px;
-margin-top:10px;
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
-.desc{
-margin-top:10px;
-color:#555;
-line-height:1.6;
+.gallery img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+border:1px solid #222;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* ABOUT */
+
+.about-box{
+background:#111;
+border:1px solid #d4af37;
+padding:30px;
+border-radius:15px;
+}
+
+/* CONTACT */
+
+.contact{
+background:black;
+border-top:1px solid #d4af37;
 }
 
 .btn{
-display:block;
-margin-top:20px;
-text-align:center;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:8px;
-font-size:18px;
+background:linear-gradient(45deg,#d4af37,#f9e076);
+padding:15px 40px;
+border-radius:40px;
 text-decoration:none;
+color:black;
+font-weight:bold;
+border:none;
+cursor:pointer;
 }
 
-footer{
+/* FORM */
+
+form input,form select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:none;
+}
+
+/* MAP */
+
+.map{
 margin-top:40px;
-background:#000;
+border-radius:10px;
+overflow:hidden;
+}
+
+/* FLOAT WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px 20px;
 color:white;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
 text-align:center;
 padding:20px;
+color:#aaa;
+font-size:13px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-Suhaib Trophies
+
+<div class="menu-container">
+
+<div class="three-dots" onclick="menu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="dropdown" id="menu">
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+<h1>Suhaib Trophies</h1>
+<p>Wholesale Trophy Manufacturer – Moradabad</p>
+
 </header>
 
-<div class="container">
+<!-- SLIDER -->
 
-<div class="product">
-
+<div class="slider">
+<div class="slides">
 <img src="mypic1.jpg">
-
-<div class="title">
-Premium Champion Trophy
+<img src="mypic2.jpg">
+<img src="mypic3.jpg">
+</div>
 </div>
 
-<div class="price">
-₹3000
+<!-- PRODUCTS -->
+
+<div class="section" id="products">
+
+<h2>Our Products</h2>
+
+<div class="products-grid">
+
+<div class="card">
+<img src="mypic1.jpg">
+<h3>Sports Trophy</h3>
+<p>Perfect for cricket and football tournaments.</p>
 </div>
 
-<div class="desc">
-High quality premium trophy perfect for tournaments, school awards and championship events.
+<div class="card">
+<img src="mypic2.jpg">
+<h3>School Awards</h3>
+<p>Best trophies for annual functions.</p>
 </div>
 
-<a class="btn" href="https://wa.me/919084497591?text=Hello%20Suhaib%20Trophies%20I%20want%20to%20order%20this%20trophy">
-Order on WhatsApp
+<div class="card">
+<img src="mypic3.jpg">
+<h3>Custom Medals</h3>
+<p>Premium medals with custom printing.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- GALLERY -->
+
+<div class="section" id="gallery">
+
+<h2>Trophy Gallery</h2>
+
+<div class="gallery">
+
+<img src="mypic1.jpg" onclick="openImg(this)">
+<img src="mypic2.jpg" onclick="openImg(this)">
+<img src="mypic3.jpg" onclick="openImg(this)">
+<img src="mypic1.jpg" onclick="openImg(this)">
+<img src="mypic2.jpg" onclick="openImg(this)">
+<img src="mypic3.jpg" onclick="openImg(this)">
+
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+<img id="lightbox-img">
+</div>
+
+<!-- ABOUT -->
+
+<div class="section" id="about">
+
+<h2>About Us</h2>
+
+<div class="about-box">
+
+<p>
+We are a Moradabad based trophy manufacturing unit supplying high quality custom trophies and awards across India at wholesale prices.
+</p>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section contact" id="contact">
+
+<h2>Order Now</h2>
+
+<form onsubmit="sendOrder();return false;">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<input type="text" id="city" placeholder="City" required>
+
+<select id="product">
+<option>Sports Trophy</option>
+<option>School Award</option>
+<option>Custom Medal</option>
+</select>
+
+<input type="number" id="qty" placeholder="Quantity" required>
+
+<br><br>
+
+<button class="btn">Send Order</button>
+
+</form>
+
+<div class="map">
+
+<iframe 
+src="https://maps.google.com/maps?q=moradabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300">
+</iframe>
+
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/9084497591">
+WhatsApp
 </a>
 
-</div>
-
-</div>
-
 <footer>
-© 2026 Suhaib Trophies
+
+© 2026 Suhaib Trophy Manufacturing
+
 </footer>
+
+<script>
+
+function menu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+function openImg(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeImg(){
+document.getElementById("lightbox").style.display="none";
+}
+
+function sendOrder(){
+
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var city=document.getElementById("city").value;
+var product=document.getElementById("product").value;
+var qty=document.getElementById("qty").value;
+
+var msg="New Trophy Order%0A%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"City: "+city+"%0A"+
+"Product: "+product+"%0A"+
+"Quantity: "+qty;
+
+window.open("https://wa.me/9084497591?text="+msg);
+
+}
+
+</script>
 
 </body>
 </html>
