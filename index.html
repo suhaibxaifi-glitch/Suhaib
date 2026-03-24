@@ -3,48 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suhaib Trophies | Luxury Award Manufacturers</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta name="description" content="Suhaib Trophies - Moradabad's premier luxury award, trophy & medallion manufacturer. Custom royal awards, sports trophies & corporate gifts with platinum & rose gold finish. Handcrafted excellence since years.">
+    <title>Suhaib Trophies | Luxury Award Manufacturers in Moradabad</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            /* NEW COLOR PALETTE: Silver & Rose Gold */
             --silver: #e2e2e2;
-            --platinum: #ffffff;
+            --platinum: #f8f8f8;
             --rose-gold: #b76e79;
             --deep-rose: #915a63;
             --bg-black: #050505;
+            --glass: rgba(255,255,255,0.06);
         }
 
+        * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg-black); color: white; overflow-x: hidden; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0; 
+            background: var(--bg-black); 
+            color: white; 
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
         /* PREMIUM HEADER */
         header {
-            background: rgba(0, 0, 0, 0.95);
-            border-bottom: 1px solid rgba(226, 226, 226, 0.2);
-            padding: 25px 10px;
-            text-align: center;
+            background: rgba(5, 5, 5, 0.95);
+            border-bottom: 1px solid rgba(226, 226, 226, 0.15);
+            padding: 20px 15px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* NEW SILVER METALLIC NAME STYLE */
+        .menu-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 28px; 
+            cursor: pointer; 
+            z-index: 1010;
+        }
+        .menu-btn span { 
+            display: block; 
+            width: 25px; 
+            height: 2px; 
+            background: var(--rose-gold); 
+            margin: 6px 0; 
+            transition: 0.3s;
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute; 
+            top: 75px; 
+            left: 20px; 
+            background: #0a0a0a; 
+            border: 1px solid var(--rose-gold); 
+            border-radius: 12px; 
+            width: 180px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        .dropdown a { 
+            display: block; 
+            padding: 14px 18px; 
+            color: var(--rose-gold); 
+            text-decoration: none; 
+            font-size: 14px; 
+            border-bottom: 1px solid #222;
+        }
+        .dropdown a:hover { background: var(--rose-gold); color: white; }
+
         header h1 {
             margin: 0;
             font-family: 'Playfair Display', serif;
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 700;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            
-            /* Animated Silver/Platinum Shine */
-            background: linear-gradient(to right, #757575 10%, #ffffff 40%, #ffffff 60%, #757575 90%);
+            background: linear-gradient(to right, #757575 20%, #ffffff 50%, #757575 80%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: silverShine 4s linear infinite;
+            animation: silverShine 5s linear infinite;
         }
 
         @keyframes silverShine {
@@ -53,65 +101,198 @@
 
         header p { 
             color: var(--rose-gold); 
-            font-size: 10px; 
+            font-size: 11px; 
             letter-spacing: 4px; 
             text-transform: uppercase; 
-            margin-top: 8px;
-            font-weight: 600;
+            margin-top: 6px;
+            font-weight: 500;
         }
 
-        /* MENU BUTTON (Rose Gold) */
-        .menu-btn { position: absolute; left: 20px; top: 32px; cursor: pointer; }
-        .menu-btn span { display: block; width: 22px; height: 2px; background: var(--rose-gold); margin: 5px 0; }
-
-        .dropdown {
-            display: none; position: absolute; top: 70px; left: 20px; 
-            background: #111; border: 1px solid var(--rose-gold); border-radius: 8px; width: 160px;
+        /* HERO SLIDER */
+        .slider { 
+            width: 100%; 
+            aspect-ratio: 16/9; 
+            overflow: hidden; 
+            background: #000; 
+            position: relative;
         }
-        .dropdown a { display: block; padding: 12px; color: var(--rose-gold); text-decoration: none; font-size: 13px; border-bottom: 1px solid #222; }
-        .dropdown a:hover { background: var(--rose-gold); color: white; }
-        .show { display: block; }
+        .slides { 
+            display: flex; 
+            width: 300%; 
+            height: 100%; 
+            animation: slide 18s infinite ease-in-out; 
+        }
+        .slides img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
+        @keyframes slide { 
+            0%, 30% { transform: translateX(0); }
+            35%, 63% { transform: translateX(-33.33%); }
+            68%, 96% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
 
-        /* SLIDER FIX */
-        .slider { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #000; }
-        .slides { display: flex; width: 300%; height: 100%; animation: slide 15s infinite ease-in-out; }
-        .slides img { width: 100%; height: 100%; object-fit: contain; background: #000; }
-        @keyframes slide { 0%, 25% {transform: translateX(0);} 33%, 58% {transform: translateX(-33.33%);} 66%, 91% {transform: translateX(-66.66%);} 100% {transform: translateX(0);} }
+        .slider-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        .slider-overlay h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin: 0 0 8px 0;
+            letter-spacing: 3px;
+        }
 
-        /* PRODUCTS & CARDS */
-        .container { padding: 60px 20px; max-width: 1100px; margin: auto; text-align: center; }
-        h2 { font-family: 'Playfair Display', serif; color: var(--silver); font-size: 28px; letter-spacing: 3px; margin-bottom: 40px; }
+        /* SECTIONS */
+        .container { 
+            padding: 80px 20px; 
+            max-width: 1200px; 
+            margin: auto; 
+            text-align: center; 
+        }
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--silver); 
+            font-size: 32px; 
+            letter-spacing: 4px; 
+            margin-bottom: 50px; 
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* PRODUCTS */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 35px; 
+        }
         .card { 
-            background: #0e0e0e; border: 1px solid #1a1a1a; border-radius: 20px; padding: 20px; 
-            transition: 0.4s; position: relative; overflow: hidden;
+            background: #0a0a0a; 
+            border: 1px solid #1f1f1f; 
+            border-radius: 24px; 
+            padding: 25px; 
+            transition: all 0.5s ease;
+            overflow: hidden;
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--rose-gold); box-shadow: 0 10px 30px rgba(183, 110, 121, 0.1); }
-        .card img { width: 100%; border-radius: 15px; margin-bottom: 15px; }
-        .card h3 { color: var(--rose-gold); font-size: 20px; margin: 10px 0; }
-        .card p { color: #888; font-size: 14px; }
+        .card:hover { 
+            transform: translateY(-15px); 
+            border-color: var(--rose-gold); 
+            box-shadow: 0 20px 40px rgba(183, 110, 121, 0.15);
+        }
+        .card img { 
+            width: 100%; 
+            border-radius: 18px; 
+            margin-bottom: 20px; 
+            transition: 0.6s;
+        }
+        .card:hover img { transform: scale(1.05); }
+        .card h3 { 
+            color: var(--rose-gold); 
+            font-size: 22px; 
+            margin: 15px 0 10px; 
+        }
+        .card p { color: #aaa; font-size: 15px; }
 
-        /* ROSE GOLD FORM & BUTTON */
-        .form-box { background: #0d0d0d; padding: 40px 20px; border-radius: 25px; border: 1px solid #222; max-width: 600px; margin: auto; }
-        input, select { width: 100%; padding: 15px; margin: 10px 0; background: #000; border: 1px solid #333; border-radius: 10px; color: white; box-sizing: border-box; }
-        input:focus { border-color: var(--rose-gold); outline: none; }
-        
+        /* ABOUT */
+        .about-box {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(226,226,226,0.1);
+            border-radius: 24px;
+            padding: 50px 30px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        /* TESTIMONIALS */
+        .testimonial {
+            background: #0a0a0a;
+            border-radius: 20px;
+            padding: 30px;
+            border-left: 5px solid var(--rose-gold);
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        /* INQUIRY FORM */
+        .form-box { 
+            background: #0a0a0a; 
+            padding: 50px 30px; 
+            border-radius: 28px; 
+            border: 1px solid #222; 
+            max-width: 620px; 
+            margin: 40px auto; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+        input, select { 
+            width: 100%; 
+            padding: 16px; 
+            margin: 12px 0; 
+            background: #111; 
+            border: 1px solid #333; 
+            border-radius: 12px; 
+            color: white; 
+            font-size: 16px;
+        }
+        input:focus, select:focus { 
+            border-color: var(--rose-gold); 
+            outline: none; 
+        }
+
         .btn { 
             background: linear-gradient(45deg, var(--deep-rose), var(--rose-gold)); 
-            color: white; font-weight: 700; padding: 16px; border-radius: 50px; 
-            width: 100%; border: none; cursor: pointer; text-transform: uppercase; margin-top: 15px;
-            letter-spacing: 1px;
+            color: white; 
+            font-weight: 700; 
+            padding: 18px; 
+            border-radius: 50px; 
+            width: 100%; 
+            border: none; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            font-size: 15px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: scale(1.03); }
+
+        /* WHATSAPP BUTTON */
+        .wa { 
+            position: fixed; 
+            bottom: 25px; 
+            right: 25px; 
+            background: #25D366; 
+            color: white; 
+            padding: 16px 28px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); 
+            z-index: 1000;
+            font-size: 15px;
         }
 
-        /* WHATSAPP FLOAT (Silver/Rose theme) */
-        .wa { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; }
+        footer { 
+            padding: 50px 20px; 
+            text-align: center; 
+            color: #555; 
+            font-size: 13px; 
+            letter-spacing: 1px;
+            border-top: 1px solid #111;
+        }
 
-        footer { padding: 40px; text-align: center; color: #444; font-size: 12px; letter-spacing: 1px; }
-        
         @media (max-width: 600px) {
-            header h1 { font-size: 24px; letter-spacing: 3px; }
+            header h1 { font-size: 26px; letter-spacing: 3px; }
             .slider { aspect-ratio: 4/3; }
+            .container { padding: 60px 15px; }
         }
     </style>
 </head>
@@ -124,85 +305,120 @@
     <div class="dropdown" id="drop">
         <a href="#">Home</a>
         <a href="#prod">Products</a>
-        <a href="#about">About</a>
-        <a href="#order">Order</a>
+        <a href="#about">About Us</a>
+        <a href="#order">Place Inquiry</a>
     </div>
-    <h1>Suhaib Trophies</h1>
-    <p>Premium Craftsmanship • Moradabad</p>
+    <div>
+        <h1>Suhaib Trophies</h1>
+        <p>Premium Craftsmanship • Moradabad</p>
+    </div>
 </header>
 
+<!-- HERO SLIDER -->
 <div class="slider">
     <div class="slides">
-        <img src="mypic1.jpg">
-        <img src="mypic2.jpg">
-        <img src="mypic3.jpg">
+        <img src="mypic1.webp" alt="Luxury Royal Award Trophy by Suhaib Trophies" loading="eager" width="1920" height="1080">
+        <img src="mypic2.webp" alt="Premium Sports Trophy - Suhaib Trophies" loading="lazy" width="1920" height="1080">
+        <img src="mypic3.webp" alt="Custom Rose Gold Medallion - Suhaib Trophies" loading="lazy" width="1920" height="1080">
+    </div>
+    <div class="slider-overlay">
+        <h2>Excellence Crafted in Brass City</h2>
     </div>
 </div>
 
+<!-- PRODUCTS -->
 <div class="container" id="prod">
     <h2>The Platinum Collection</h2>
     <div class="grid">
         <div class="card">
-            <img src="mypic1.jpg">
+            <img src="mypic1.webp" alt="Royal Awards Collection" loading="lazy" width="800" height="600">
             <h3>Royal Awards</h3>
-            <p>Exclusive metallic finishes for high-profile ceremonies.</p>
+            <p>Exclusive metallic finishes for high-profile ceremonies and corporate events.</p>
         </div>
         <div class="card">
-            <img src="mypic2.jpg">
+            <img src="mypic2.webp" alt="Sports Glory Trophies" loading="lazy" width="800" height="600">
             <h3>Sports Glory</h3>
-            <p>Iconic trophies designed for ultimate champions.</p>
+            <p>Iconic trophies designed for champions and memorable victories.</p>
         </div>
         <div class="card">
-            <img src="mypic3.jpg">
+            <img src="mypic3.webp" alt="Custom Medallions" loading="lazy" width="800" height="600">
             <h3>Custom Medallions</h3>
-            <p>Precision-engraved medals with silk-touch ribbons.</p>
+            <p>Precision-engraved medals with premium ribbons and finishes.</p>
         </div>
     </div>
 </div>
 
+<!-- ABOUT US -->
+<div class="container" id="about">
+    <h2>Our Legacy</h2>
+    <div class="about-box">
+        <p>Suhaib Trophies brings together generations of craftsmanship from the Brass City of Moradabad. We specialize in creating luxury awards and trophies that celebrate excellence with unmatched precision and elegance.</p>
+        <p>From royal awards to custom corporate mementos, every piece is hand-finished with premium materials including rose gold, platinum tones, and fine engraving. Your success deserves nothing less than perfection.</p>
+    </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="container">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+        <p>"The quality and finishing of the trophies exceeded our expectations. Perfect for our annual awards night!"</p>
+        <strong>— Corporate Client, Delhi</strong>
+    </div>
+    <div class="testimonial">
+        <p>"Beautiful craftsmanship and on-time delivery. Highly recommended for premium trophies."</p>
+        <strong>— Sports Academy, Lucknow</strong>
+    </div>
+</div>
+
+<!-- INQUIRY FORM -->
 <div class="container" id="order">
-    <h2>Place Inquiry</h2>
+    <h2>Place Your Inquiry</h2>
     <div class="form-box">
         <form onsubmit="sendW(); return false;">
             <input type="text" id="n" placeholder="Full Name" required>
             <input type="tel" id="p" placeholder="WhatsApp Number" required>
             <input type="text" id="c" placeholder="City" required>
             <select id="pr">
-                <option>Royal Award</option>
-                <option>Sports Glory</option>
-                <option>Custom Medallion</option>
+                <option value="Royal Award">Royal Award</option>
+                <option value="Sports Glory">Sports Glory Trophy</option>
+                <option value="Custom Medallion">Custom Medallion</option>
+                <option value="Other">Other Custom Design</option>
             </select>
-            <input type="number" id="q" placeholder="Quantity" required>
-            <button class="btn">Request Quote via WhatsApp</button>
+            <input type="number" id="q" placeholder="Quantity (Min 5)" min="5" required>
+            <button type="submit" class="btn">Send Inquiry via WhatsApp</button>
         </form>
     </div>
 </div>
 
-<a href="https://wa.me/919084497591" class="wa">Chat on WhatsApp</a>
+<a href="https://wa.me/919084497591" class="wa" target="_blank">💬 Chat on WhatsApp</a>
 
 <footer>
-    <p>© 2026 SUHAIB TROPHIES | THE BRASS CITY | MORADABAD</p>
+    <p>© 2026 SUHAIB TROPHIES • THE BRASS CITY • MORADABAD, UTTAR PRADESH</p>
+    <p>Premium Award & Trophy Manufacturers</p>
 </footer>
 
 <script>
-    function toggleM() { document.getElementById("drop").classList.toggle("show"); }
+    function toggleM() {
+        document.getElementById("drop").classList.toggle("show");
+    }
     
     function sendW() {
-        var n = document.getElementById("n").value;
-        var p = document.getElementById("p").value;
-        var c = document.getElementById("c").value;
-        var pr = document.getElementById("pr").value;
-        var q = document.getElementById("q").value;
-        var ref = "ST-PLAT-" + Math.floor(Math.random()*9000+1000);
+        const n = document.getElementById("n").value.trim();
+        const p = document.getElementById("p").value.trim();
+        const c = document.getElementById("c").value.trim();
+        const pr = document.getElementById("pr").value;
+        const q = document.getElementById("q").value;
+        const ref = "ST-" + Math.floor(Math.random()*90000+10000);
 
-        var msg = "🛡️ *SUHAIB TROPHIES - LUXURY INQUIRY* %0A" +
-                  "--------------------------%0A" +
-                  "*Ref ID:* " + ref + "%0A" +
-                  "*Client:* " + encodeURIComponent(n) + "%0A" +
-                  "*City:* " + encodeURIComponent(c) + "%0A" +
-                  "*Item:* " + encodeURIComponent(pr) + "%0A" +
-                  "*Qty:* " + encodeURIComponent(q) + "%0A" +
-                  "--------------------------";
+        const msg = "🛡️ *SUHAIB TROPHIES - LUXURY INQUIRY*%0A" +
+                    "--------------------------%0A" +
+                    "*Ref ID:* " + ref + "%0A" +
+                    "*Name:* " + encodeURIComponent(n) + "%0A" +
+                    "*City:* " + encodeURIComponent(c) + "%0A" +
+                    "*Product:* " + encodeURIComponent(pr) + "%0A" +
+                    "*Quantity:* " + encodeURIComponent(q) + "%0A" +
+                    "--------------------------%0A" +
+                    "Please share your design requirements or photo if any.";
 
         window.open("https://wa.me/919084497591?text=" + msg, "_blank");
     }
